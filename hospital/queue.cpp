@@ -74,9 +74,15 @@ bool Queue::cancelBySSN(const std::string& ssn, Patient& p) {
 void Queue::list() const {
     Node* current = front;
     while (current) {
-        cout << current->data.firstName << " " << current->data.lastName
-            << " (" << current->data.ssn << ") - "
-            << (current->data.status == CRITICAL ? "Critical" : "Regular") << endl;
+        const Patient& p = current->data;
+
+        cout << p.firstName;
+        if (!p.lastName.empty()) {
+            cout << " " << p.lastName;
+        }
+        cout << " (SSN: " << p.ssn << ") "
+            << (p.status == CRITICAL ? "Critical" : "Regular") << endl;
+
         current = current->next;
     }
 }

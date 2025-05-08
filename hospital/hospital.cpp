@@ -21,7 +21,7 @@ int main()
     strftime(dateStr, sizeof(dateStr), "%Y-%m-%d", &localTime);
     string nextDayFile = "next_day_" + string(dateStr) + ".csv";
 
-    loadInitialPatients(nextDayFile, clinics, transactionLog, seenSSNs);
+    //loadInitialPatients(nextDayFile, clinics, transactionLog, seenSSNs);
 
 
     int deptChoice;

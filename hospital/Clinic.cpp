@@ -43,3 +43,6 @@ const std::string& Clinic::getName() const {
 Queue* Clinic::getQueue() {
     return &patientQueue;
 }
+bool Clinic::isFull() const {
+    return patientQueue.isFull();
+}

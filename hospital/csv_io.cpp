@@ -24,7 +24,7 @@ void loadInitialPatients(const string& filename, map<string, Clinic*>& clinics, 
         getline(ss, ssn, ',');
         getline(ss, statusCode, ',');
 
-        if (firstName.empty() || lastName.empty() || ssn.empty() || !isNumeric(ssn)) {
+        if (firstName.empty() || ssn.empty() || !isNumeric(ssn)) {
             transactionLog << "ERROR: Invalid or missing data for patient: " << firstName << " " << lastName << " with SSN: " << ssn << endl;
             continue;
         }
@@ -50,10 +50,14 @@ void loadInitialPatients(const string& filename, map<string, Clinic*>& clinics, 
             : clinics[clinicName]->addPatient(firstName, lastName, ssn);
 
         if (success) {
-            transactionLog << clinicName << " Patient (" << (isCritical ? "Critical" : "Regular") << "): " << firstName << " " << lastName << " was added to the waiting room." << endl;
+            transactionLog << clinicName << " Patient (" << (isCritical ? "Critical" : "Regular") << "): " << firstName;
+            if (!lastName.empty()) transactionLog << " " << lastName;
+            transactionLog << " was added to the waiting room." << endl;
         }
         else {
-            transactionLog << "ERROR: " << clinicName << " is full. Could not add " << firstName << " " << lastName << endl;
+            transactionLog << "ERROR: " << clinicName << " is full. Could not add " << firstName;
+            if (!lastName.empty()) transactionLog << " " << lastName;
+            transactionLog << endl;
         }
     }
 

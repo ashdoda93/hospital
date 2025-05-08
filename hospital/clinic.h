@@ -18,6 +18,8 @@ public:
     void listPatients() const;
     const std::string& getName() const;
     Queue* getQueue();
+    bool isFull() const;
+
 };
 
 #endif 

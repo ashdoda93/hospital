@@ -1,6 +1,11 @@
 #include "Header.h"
 //Wrtitten with chatGPT using previous code as prompt
 
+#include "clinic.h"
+
+#include "clinic.h"
+
+
 void departmentMenu(Clinic* clinic, ofstream& log) {
     int choice;
     do {
@@ -13,35 +18,51 @@ void departmentMenu(Clinic* clinic, ofstream& log) {
         string firstName, lastName, ssn;
         switch (choice) {
         case 1:
+            if (clinic->isFull()) {
+                cout << "ERROR: " << clinic->getName() << " is full. Cannot add more patients.";
+                    log << "ERROR: " << clinic->getName() << " is full. Cannot add more patients.";
+                    break;
+            }
             cout << "First Name: "; getline(cin, firstName);
             cout << "Last Name: "; getline(cin, lastName);
             cout << "SSN: "; getline(cin, ssn);
             if (ssn.empty() || !isNumeric(ssn)) {
-                log << "ERROR: Invalid or missing SSN for patient: " << firstName << " " << lastName << endl;
-                break;
+                log << "ERROR: Invalid or non-numeric SSN for patient: " << firstName << " " << lastName
+                    << " (SSN: " << ssn << ")" << endl;
+                cout << "ERROR: Invalid or non-numeric SSN. Defaulting SSN to 000 and adding patient anyway." << endl;
+                ssn = "000";
             }
-            if (clinic->addPatient(firstName, lastName, ssn)) {
-                log << clinic->getName() << " Patient (Regular): " << firstName << " " << lastName << " was added to the waiting room." << endl;
-            }
-            else {
+            if (clinic->isFull()) {
                 log << "ERROR: " << clinic->getName() << " is full. Could not add " << firstName << " " << lastName << endl;
                 cout << "ERROR: " << clinic->getName() << " is full. Could not add " << firstName << " " << lastName << endl;
+            }
+            else if (clinic->addPatient(firstName, lastName, ssn)) {
+                log << clinic->getName() << " Patient (Regular): " << firstName << (lastName.empty() ? "" : " " + lastName) << " was added to the waiting room." << endl;
+                cout << "Patient added to the queue successfully." << endl;
             }
             break;
         case 2:
+            if (clinic->isFull()) {
+                cout << "ERROR: " << clinic->getName() << " is full. Cannot add more patients.";
+                    log << "ERROR: " << clinic->getName() << " is full. Cannot add more patients.";
+                    break;
+            }
             cout << "First Name: "; getline(cin, firstName);
             cout << "Last Name: "; getline(cin, lastName);
             cout << "SSN: "; getline(cin, ssn);
             if (ssn.empty() || !isNumeric(ssn)) {
-                log << "ERROR: Invalid or missing SSN for critical patient: " << firstName << " " << lastName << endl;
-                break;
+                log << "ERROR: Invalid or non-numeric SSN for critical patient: " << firstName << " " << lastName
+                    << " (SSN: " << ssn << ")" << endl;
+                cout << "ERROR: Invalid or non-numeric SSN. Defaulting SSN to 000 and adding critical patient anyway." << endl;
+                ssn = "000";
             }
-            if (clinic->addCriticalPatient(firstName, lastName, ssn)) {
-                log << clinic->getName() << " Patient (Critical): " << firstName << " " << lastName << " was added to the waiting room." << endl;
-            }
-            else {
+            if (clinic->isFull()) {
                 log << "ERROR: " << clinic->getName() << " is full. Could not add " << firstName << " " << lastName << endl;
                 cout << "ERROR: " << clinic->getName() << " is full. Could not add " << firstName << " " << lastName << endl;
+            }
+            else if (clinic->addCriticalPatient(firstName, lastName, ssn)) {
+                log << clinic->getName() << " Patient (Critical): " << firstName << (lastName.empty() ? "" : " " + lastName) << " was added to the waiting room." << endl;
+                cout << "Patient added to the queue successfully." << endl;
             }
             break;
         case 3:
@@ -69,6 +90,8 @@ void departmentMenu(Clinic* clinic, ofstream& log) {
         }
     } while (choice != 6);
 }
+
+
 //Written with chatGPT using previous code as prompt and the need to keep a list of records
 void exportRemainingPatients(const map<string, Clinic*>& clinics, const string& filename) {
     // Create filename with current date
