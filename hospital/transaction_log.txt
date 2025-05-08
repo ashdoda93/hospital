@@ -1,0 +1,47 @@
+Heart Clinic Patient (Regular): Christopher  Midnight was added to the waiting room.
+Heart Clinic Patient (Regular): Bernie Sanders was added to the waiting room.
+Heart Clinic Patient (Regular): Sean Connery was added to the waiting room.
+Heart Clinic Patient (Regular): Spongebob Squarepants was added to the waiting room.
+Heart Clinic Patient (Regular): Betty Boop was added to the waiting room.
+Heart Clinic Patient (Regular): Pink Panther was added to the waiting room.
+Heart Clinic Patient (Regular): Jennifer Lopez was added to the waiting room.
+Heart Clinic Patient (Regular): Donald Duck was added to the waiting room.
+Plastic Surgery Clinic Patient (Regular): Bugs Bunny was added to the waiting room.
+Plastic Surgery Clinic Patient (Regular): Beyonce Knowles was added to the waiting room.
+Plastic Surgery Clinic Patient (Regular): Britney Spears was added to the waiting room.
+Plastic Surgery Clinic Patient (Regular): Charlie Brown was added to the waiting room.
+ERROR: Invalid or missing data for patient: Drake  with SSN: 016
+ERROR: Invalid or missing data for patient: Rihanna  with SSN: 020
+Pulmonary Clinic Patient (Regular): Yosemite Sam was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Johnny Depp was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Lady Gaga was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Jackie Chan was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Mariah Carey was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Brad Pitt was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Will Smith was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Ariana Grande was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Justin Bieber was added to the waiting room.
+Pulmonary Clinic Patient (Regular): Scooby Doo was added to the waiting room.
+Heart Clinic Patient (Critical): Princess Maybell was added to the waiting room.
+SKIPPED DUPLICATE: Christopher  Midnight with SSN 909
+SKIPPED DUPLICATE: Bernie Sanders with SSN 002
+SKIPPED DUPLICATE: Sean Connery with SSN 007
+SKIPPED DUPLICATE: Spongebob Squarepants with SSN 008
+SKIPPED DUPLICATE: Betty Boop with SSN 009
+SKIPPED DUPLICATE: Pink Panther with SSN 014
+SKIPPED DUPLICATE: Jennifer Lopez with SSN 017
+SKIPPED DUPLICATE: Donald Duck with SSN 019
+SKIPPED DUPLICATE: Bugs Bunny with SSN 003
+SKIPPED DUPLICATE: Beyonce Knowles with SSN 006
+SKIPPED DUPLICATE: Britney Spears with SSN 021
+SKIPPED DUPLICATE: Charlie Brown with SSN 015
+SKIPPED DUPLICATE: Yosemite Sam with SSN 001
+SKIPPED DUPLICATE: Johnny Depp with SSN 004
+SKIPPED DUPLICATE: Lady Gaga with SSN 005
+SKIPPED DUPLICATE: Jackie Chan with SSN 010
+SKIPPED DUPLICATE: Mariah Carey with SSN 011
+SKIPPED DUPLICATE: Brad Pitt with SSN 012
+SKIPPED DUPLICATE: Will Smith with SSN 013
+SKIPPED DUPLICATE: Ariana Grande with SSN 016
+SKIPPED DUPLICATE: Justin Bieber with SSN 018
+SKIPPED DUPLICATE: Scooby Doo with SSN 111
